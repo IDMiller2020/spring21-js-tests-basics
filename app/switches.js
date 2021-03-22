@@ -7,9 +7,118 @@
     // output: 7
 
 function daysPosition(day, offset) {
-
+    switch (day) {
+        case 'sunday':
+          if (offset) {
+            return 7
+          } else {
+            return 1
+          }
+        break
+        case 'monday':
+          if (offset) {
+            return 1
+          } else {
+            return 2
+          }
+        break
+        case 'tuesday':
+          if (offset) {
+            return 2
+          } else {
+            return 3
+              }
+        break
+        case 'wednesday':
+          if (offset) {
+            return 3
+          } else {
+            return 4
+              }
+        break
+        case 'thursday':
+          if (offset) {
+            return 4
+          } else {
+            return 5
+              }
+        break
+        case 'friday':
+          if (offset) {
+            return 5
+          } else {
+            return 6
+              }
+        break
+        case 'saturday':
+          if (offset) {
+            return 6
+          } else {
+            return 7
+              }
+        break
+            default:
+                return 'That\'s not a day of the week';
+    }
 }
 
+/*
+function daysPosition(day, offset) {
+    if(offset) {
+      switch (day) {
+        case 'Sunday':
+          return 7
+          break
+        case 'Monday':
+          return 1
+          break
+        case 'Tuesday':
+          return 2
+          break
+        case 'Wednesday':
+          return 3
+          break
+        case 'Thursday':
+          return 4
+          break
+        case 'Friday':
+          return 5
+          break
+        case 'Saturday':
+          return 6
+          break
+        default:
+          return 'That\'s not a day of the week';
+      }
+    } else {
+        switch (day) {
+            case 'Sunday':
+              return 1
+              break
+            case 'Monday':
+              return 2
+              break
+            case 'Tuesday':
+              return 3
+              break
+            case 'Wednesday':
+              return 4
+              break
+            case 'Thursday':
+              return 5
+              break
+            case 'Friday':
+              return 6
+              break
+            case 'Saturday':
+              return 7
+              break
+            default:
+              return 'That\'s not a day of the week'
+          }
+    }
+}
+*/
 
 // --------------------------------------------
 
@@ -26,10 +135,26 @@ function daysPosition(day, offset) {
  *            >= +3     |   "Ouch"
  */
 
- function golfScore(score, par) {
+function golfScore(score, par) {
+  const difference = score - par
+  switch (difference) {
+      case -3:
+          return 'Ace'
+      case -2:
+          return 'Eagle'
+      case -1:
+          return 'Birdie'
+      case 0:
+          return 'Par'
+      case 1:
+          return 'Bogie'
+      case 2:
+          return 'Double Bogie'
+      default:
+          return 'Ouch'
+  }
+}
 
- }
- 
 
 // --------------------------------------------
 
@@ -52,5 +177,26 @@ function daysPosition(day, offset) {
 let count = 0
 
 function cardCounter(card) {
-
+    console.log(card)
+  switch (card) {
+      case '2':
+      case '3':
+      case '4':
+      case '5':
+      case '6':
+        count++
+        break;
+      case '10':
+      case 'J':
+      case 'Q':
+      case 'K':
+      case 'A':
+        count--
+        break;
+    }
+      if (count > 0) {
+          return `${count} Bet`
+      } else {
+          return `${count} Hold`
+      }
 }
