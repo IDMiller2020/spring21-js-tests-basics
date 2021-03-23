@@ -177,7 +177,6 @@ function golfScore(score, par) {
 let count = 0
 
 function cardCounter(card) {
-    console.log(card)
   switch (card) {
       case '2':
       case '3':
